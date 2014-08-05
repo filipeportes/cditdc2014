@@ -7,7 +7,6 @@
 
     <ui:define name="content">
         <h2>CDI Qualifiers</h2>
-        <br/>
         <p>
             Agora as duas implementações de Greeting podem ser Injetadas.<br/>
             Beans que não recebam nenhuma anotação de Qualifier, automaticamente são definidos como @Default.
@@ -25,7 +24,7 @@
             Para utilizarmos nossa nova Classe vamos injeta-la dessa forma:
             <pre class="brush: java">
                 @Named
-                @ViewScoped
+                @RequestScoped
                 public class qualifierBean {
 
                     @Inject @Informal private Greeting greeting;

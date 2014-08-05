@@ -7,7 +7,6 @@
 
     <ui:define name="content">
         <h2>Injeção no CDI</h2>
-        <br/>
         <p>
             Por exemplo, ao criarmos uma classe simples com um método que retorna uma String:
 
@@ -20,15 +19,14 @@
             </pre>
 
             Essa classe já pode ser injetada em qualquer outra utilizando a anotação @Inject.
-            <br />Vamos injeta-la no managedBean desta página JSF!!
+            <br />Vamos injeta-la em um bean nomeado e utiliza-la nesta página JSF!!
 
             <pre class="brush: java">
                 @Named
-                @ViewScoped
+                @RequestScoped
                 public class InjecaoBean {
                     @Inject
                     private Greeting greeting;
-
                     ...
                 }
             </pre>

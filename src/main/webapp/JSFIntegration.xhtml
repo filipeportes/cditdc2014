@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml">
+
+    <ui:define name="content">
+        <h2>Integração JSF</h2>
+        <p>
+            As versões do CDI e JSF do Java EE 7, estão integradas de forma muito forte, os principais pontos de destaque dessa integração são:
+        </p>
+        
+        <h4>Nomeação de Beans</h4>
+        <p>
+            Ao utilizar a anotação @Named do CDI um Bean torna acessível atraves de EL(Expression Lenguage) em páginas JSF e JSP, 
+            e subtitui a funcionalidade de um @ManagedBean do JSF, e mantém acesso aos contextos e escopos do CDI.
+        </p>
+        
+        <h4>Escopos</h4>
+        <p>
+            O JSF possui outros escopos que são interessantes para desenvolvimento web, e você também pode usá-los em seu Bean CDI 
+        </p>
+        <table title="Scopes" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+            <thead>
+                <tr align="left" valign="top">
+                    <th align="left" valign="bottom" id="r1c1-t2">Escopo</th>
+                    <th align="left" valign="bottom" id="r1c3-t2">Duração</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr align="left" valign="top">
+                    <td align="left" headers="r2c1-t2 r1c2-t2">
+                        <p><code>@ViewScoped</code></p>
+                    </td>
+                    <td align="left" headers="r2c1-t2 r1c3-t2">
+                        <p>Interação com uma view JSF, tornando-se um escopo muito útil para o uso de requisições ajax.</p>
+                    </td>
+                </tr>
+                <tr align="left" valign="top">
+                    <td align="left" headers="r3c1-t2 r1c2-t2">
+                        <p><code>@FlowScoped</code></p>
+                    </td>
+                    <td align="left" headers="r3c1-t2 r1c3-t2">
+                        <p>Interação com um <a href="http://docs.oracle.com/javaee/7/tutorial/doc/jsf-configure003.htm">JSF Flow</a>, 
+                            e que é configurável pelo desenvolvedor e pode se extender por várias views</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </ui:define>
+
+</ui:composition>

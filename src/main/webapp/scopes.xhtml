@@ -5,9 +5,8 @@
 
     <ui:define name="content">
         <h2>Escopos</h2>
-        <br/>
         <p>
-            O Escopo de um Bean define qual será seu ciclo de vida, mais especificamente, quanto uma instância dele deve "sobreviver", <br/>
+            O Escopo de um Bean define qual será seu ciclo de vida, mais especificamente, quanto uma instância dele deve "sobreviver" para que possa ser reutilizada, <br/>
             a especificação do CDI define os sequintes escopos:
         </p>
         
@@ -15,15 +14,11 @@
             <thead>
                 <tr align="left" valign="top">
                     <th align="left" valign="bottom" id="r1c1-t2">Escopo</th>
-                    <th align="left" valign="bottom" id="r1c2-t2">Anotação</th>
                     <th align="left" valign="bottom" id="r1c3-t2">Duração</th>
                 </tr>
             </thead>
             <tbody>
                 <tr align="left" valign="top">
-                    <td align="left" id="r2c1-t2" headers="r1c1-t2">
-                        <p>Request</p>
-                    </td>
                     <td align="left" headers="r2c1-t2 r1c2-t2">
                         <p><code>@RequestScoped</code></p>
                     </td>
@@ -32,9 +27,6 @@
                     </td>
                 </tr>
                 <tr align="left" valign="top">
-                    <td align="left" id="r3c1-t2" headers="r1c1-t2">
-                        <p>Session</p>
-                    </td>
                     <td align="left" headers="r3c1-t2 r1c2-t2">
                         <p><code>@SessionScoped</code></p>
                     </td>
@@ -43,9 +35,6 @@
                     </td>
                 </tr>
                 <tr align="left" valign="top">
-                    <td align="left" id="r4c1-t2" headers="r1c1-t2">
-                        <p>Application</p>
-                    </td>
                     <td align="left" headers="r4c1-t2 r1c2-t2">
                         <p><code>@ApplicationScoped</code></p>
                     </td>
@@ -54,9 +43,6 @@
                     </td>
                 </tr>
                 <tr align="left" valign="top">
-                    <td align="left" id="r5c1-t2" headers="r1c1-t2">
-                        <p>Dependent</p>
-                    </td>
                     <td align="left" headers="r5c1-t2 r1c2-t2">
                         <p><code>@Dependent</code></p>
                     </td>
@@ -66,9 +52,6 @@
                     </td>
                 </tr>
                 <tr align="left" valign="top">
-                    <td align="left" id="r6c1-t2" headers="r1c1-t2">
-                        <p>Conversation</p>
-                    </td>
                     <td align="left" headers="r6c1-t2 r1c2-t2">
                         <p><code>@ConversationScoped</code></p>
                     </td>

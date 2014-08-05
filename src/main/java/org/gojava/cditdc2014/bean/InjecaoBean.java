@@ -4,7 +4,7 @@
  */
 package org.gojava.cditdc2014.bean;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.gojava.cditdc2014.greeting.Greeting;
@@ -14,7 +14,7 @@ import org.gojava.cditdc2014.greeting.Greeting;
  * @author filipe
  */
 @Named
-@ViewScoped
+@RequestScoped
 public class InjecaoBean {
     
     @Inject

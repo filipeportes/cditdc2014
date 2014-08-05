@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml">
+
+    <ui:define name="content">
+        <h2>Integração JTA</h2>
+        <p>
+            As versões do CDI e JTA do Java EE 7, também estão integradas de em um novo patamar!<br/> 
+            no JTA 1.2 foi introduzida a anotação @Transactional, que permite controlar transações em qualquer ManagedBean 
+            bastante similar a transações do Spring Framework.
+        </p>
+        
+        <h4>Escopo de transação</h4>
+        <p>
+            permite vincular um bean ao contexto de transações JTA ativas
+        </p>
+        <table title="Scopes" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+            <thead>
+                <tr align="left" valign="top">
+                    <th align="left" valign="bottom" id="r1c1-t2">Escopo</th>
+                    <th align="left" valign="bottom" id="r1c3-t2">Duração</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr align="left" valign="top">
+                    <td align="left" headers="r2c1-t2 r1c2-t2">
+                        <p><code>@TransactionScoped</code></p>
+                    </td>
+                    <td align="left" headers="r2c1-t2 r1c3-t2">
+                        <p>Esse escopo tem o tempo de vida de uma transação ativa</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </ui:define>
+
+</ui:composition>
