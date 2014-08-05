@@ -42,6 +42,10 @@
         <!-- Navigation between pages -->
         <script type="text/javascript" src="resources/js/navigation.js" />
         <script type="text/javascript">
+            
+            //inicia o SintaxHighlighter
+            SyntaxHighlighter.all();
+            
             var pages = [
                 "index.jsf",
                 "intro.jsf",
@@ -66,9 +70,6 @@
                 if (pageIndex == pages.length - 1) {
                     $("#nextButton").hide();
                 }
-
-                //inicia o SintaxHighlighter
-                SyntaxHighlighter.all();
             });
 
         </script>
