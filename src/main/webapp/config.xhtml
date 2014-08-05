@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml">
+
+    <ui:define name="content">
+        <h2>Configurando o CDI</h2>
+        <br/>
+        <p>
+            Para habilitar o funcionamento do CDI em um projeto Java EE é necessário apenas que exista algum bean anotado com um dos escopos existenste no CDI.
+            Mas nesse caso, apenas os beans anotados serão controlados pelo CDI, para que qualquer classe torne-se "disponível" para ele 
+            é necessário criar o arquivo de <i>deployment descriptor</i> <b>beans.xml</b>:
+
+            <pre class="brush: xml">
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                                           http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+                       version="1.1" bean-discovery-mode="all"&gt;
+                    ...
+                &lt;/beans&gt;
+            </pre>
+            
+            Caso o atributo <i>bean-discovery-mode</i> seja configurado com o valor "annotated" o comportamento será o mesmo de quando não há arquivo.<br/>
+            <br/>
+            Para aplicações web o arquivo xml deve ser colocado na pasta WEB-INF<br/>
+            Para modulos EJB ou JAR's o arquivo xml deve ser colocado na pasta META-INF
+            
+        </p>
+    </ui:define>
+
+</ui:composition>

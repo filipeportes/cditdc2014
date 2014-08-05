@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h2>Injeção no CDI</h2>
+        <br/>
+        <p>
+            Por exemplo, ao criarmos uma classe simples com um método que retorna uma String:
+
+            <pre class="brush: java">
+                public class Greeting {
+                    public String greet(String name) {
+                        return "Ola, caro " + name + ".";
+                    }
+                }
+            </pre>
+
+            Essa classe já pode ser injetada em qualquer outra utilizando a anotação @Inject.
+            <br />Vamos injeta-la no managedBean desta página JSF!!
+
+            <pre class="brush: java">
+                @Named
+                @ViewScoped
+                public class InjecaoBean {
+                    @Inject
+                    private Greeting greeting;
+
+                    ...
+                }
+            </pre>
+        </p>
+        <center>
+            <h:form>
+                <p:outputLabel value="Eu sou: " for="name" />
+                <p:inputText id="name" value="#{injecaoBean.name}" size="30" />
+                <p:commandButton value="Ola demo CDI!" action="#{injecaoBean.sayHello()}" update="greet" />
+                <br/>
+                <p:outputLabel id="greet" style="font-weight: bold;" value="#{injecaoBean.greet}"/>
+            </h:form>
+        </center>
+    </ui:define>
+
+</ui:composition>

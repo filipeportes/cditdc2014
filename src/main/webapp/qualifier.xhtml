@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h2>CDI Qualifiers</h2>
+        <br/>
+        <p>
+            Você pode usar qualifiers para prover mais de uma implementação pra um tipo específico de Bean, um Qualifier é basicamente uma anotação Java.<br/>
+            <br/>
+            Por exemplo podemos declarar um Qualifier chamado @Informal:
+
+            <pre class="brush: java">
+                import javax.inject.Qualifier;
+
+                @Qualifier
+                @Retention(RetentionPolicy.RUNTIME)
+                @Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
+                public @interface Informal {}
+            </pre>
+
+            em seguida aplicá-lo a uma classe que extenda a classe Greeting:
+            <pre class="brush: java">
+                @Informal
+                public class InformalGreeting extends Greeting {
+                    public String greet(String name) {
+                        return "E ai " + name + ", Beleza!!.";
+                    }
+                }
+            </pre>
+        </p>
+        
+    </ui:define>
+
+</ui:composition>
