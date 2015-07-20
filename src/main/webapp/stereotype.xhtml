@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h2>CDI Stereotypes</h2>
+        <p>
+            Stereotype é uma anotação que incorpora outras anotações, e pode ser muito útil em aplicações que tem muitos Beans que se comportam da mesma forma.<br/>
+            Toda anotação de stereotype deve utilizar a anotação @Stereotype.
+            <br/><br/>
+            Por exemplo, vamos criar uma Stereotype chamada View:
+
+            <pre class="brush: java">
+                import javax.enterprise.inject.Stereotype;
+                
+                @Named
+                @ViewScoped
+                @Stereotype
+                @Target(ElementType.TYPE)
+                @Retention(RetentionPolicy.RUNTIME)
+                public @interface View {}
+            </pre>
+
+            Toda classe anotada com nossa stereotype @View passa a ser nomeada e ter escopo @ViewScoped, 
+            um bean pode receber mais de um stereotype e também sobreescrever suas definições.
+        </p>
+        
+    </ui:define>
+
+</ui:composition>

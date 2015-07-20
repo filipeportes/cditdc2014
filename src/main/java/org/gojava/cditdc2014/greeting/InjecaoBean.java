@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.gojava.cditdc2014.bean;
+package org.gojava.cditdc2014.greeting;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

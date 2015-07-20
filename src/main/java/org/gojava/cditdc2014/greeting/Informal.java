@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.gojava.cditdc2014.qualifier;
+package org.gojava.cditdc2014.greeting;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

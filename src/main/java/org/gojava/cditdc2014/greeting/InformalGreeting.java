@@ -4,8 +4,6 @@
  */
 package org.gojava.cditdc2014.greeting;
 
-import org.gojava.cditdc2014.qualifier.Informal;
-
 /**
  *
  * @author filipe

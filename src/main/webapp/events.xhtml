@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h2>CDI Events</h2>
+        <p>
+            Eventos permitem a comunicação entre beans, sem nenhuma dependência em tempo de compilação,
+            auxiliando muito a desacoplar as camadas de nossos sistemas e também permitindo notificar uma grande quatidade de beans 
+            que estejam observando esse evento sem a necessidade de alterar a fonte do evento.
+            
+            <br/><br/>
+            Vamos considerar um exemplo de movimentações em uma conta, que serão feitos através da classe abaixo:
+
+            <pre class="brush: java">
+               public class Payment {
+    
+                    private Double value;
+               }
+            </pre>
+
+            O próximo passo é criar os eventos, e para Identificarmos o tipo de movimentação vamos utilizar Qualifiers @Credit e @Debit:
+            <pre class="brush: java">
+            @View
+            public class PaymentBean {
+
+                private Double value;
+
+                @Credit
+                @Inject
+                private Event&lt;Payment&gt; credit;
+
+                @Debit
+                @Inject
+                private Event&lt;Payment&gt; debit;
+
+                public void payCredit(){
+                    credit.fire(new Payment(value));
+                }
+
+                public void payDebid(){
+                    debit.fire(new Payment(value));
+                }
+            }
+            </pre>
+        </p>
+        
+    </ui:define>
+
+</ui:composition>
